@@ -1,11 +1,14 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
+copyright = '© 2023 ABC Widgets, Inc.'
 
 [[menus.main]]
 name = '首页'
 pageRef = '/'
 weight = 10
+
+copyright = '© 2023 ABC Widgets, Inc.'
 
 [services]
   [services.googleAnalytics]
