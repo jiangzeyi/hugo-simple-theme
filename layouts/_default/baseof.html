@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="max-w-3xl mx-auto bg-slate-300 font-mono pt-6 px-4  md:px-8">
+  <div class="bg-white">
+    <div class="flex flex-col px-4 md:px-8">
+      <header>
+        {{ partial "header.html" . }}
+      </header>
+      <main class="w-4/5 py-6 mx-auto">
+        {{ block "main" . }}{{ end }}
+      </main>
+      <footer>
+        {{ partial "footer.html" . }}
+      </footer>
+    </div>
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{{ define "main" }}
+<main class="w-4/5 py-6 mx-auto">
+  <div class="flex flex-col gap-y-4">
+    {{ range .Pages }}
+    <div class="flex gap-x-4 items-baseline">
+      <a href="{{ .RelPermalink  }}">
+        <span class="text-neutral-500 ">
+          1个月前
+        </span>
+        <span class="text-neutral-900">
+          {{ .LinkTitle }}
+        </span>
+      </a>
+    </div>
+    {{ end }}
+  </div>
+</main>
+
+{{ end }}
