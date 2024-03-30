@@ -1305,6 +1305,10 @@ video {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.font-medium {
+  font-weight: 500;
+}
+
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
@@ -1313,4 +1317,9 @@ video {
 .text-neutral-500 {
   --tw-text-opacity: 1;
   color: rgb(115 115 115 / var(--tw-text-opacity));
+}
+
+.text-zinc-800 {
+  --tw-text-opacity: 1;
+  color: rgb(39 39 42 / var(--tw-text-opacity));
 }
