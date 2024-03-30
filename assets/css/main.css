@@ -1160,8 +1160,16 @@ video {
   display: flex;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .w-4\/5 {
   width: 80%;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .max-w-3xl {
