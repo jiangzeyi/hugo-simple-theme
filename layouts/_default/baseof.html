@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
+  dir="{{ or site.Language.LanguageDirection `ltr` }}">
+
 <head>
   {{ partial "head.html" . }}
 </head>
+
 <body class="max-w-3xl mx-auto bg-slate-300 font-mono md:pt-4">
   <div class="bg-white">
     <div class="flex flex-col px-8">
@@ -16,7 +19,9 @@
         {{ partial "footer.html" . }}
       </footer>
     </div>
-    
+
   </div>
+  {{ template "_internal/google_analytics.html" . }}
 </body>
+
 </html>
