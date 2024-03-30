@@ -2,17 +2,16 @@
 <div class="flex flex-col gap-y-4 py-2">
   {{ $pages := where .Site.RegularPages "Section" "posts" }}
   {{ range $pages }}
-  <div class="flex gap-x-2 items-baseline">
-    <a href="{{.RelPermalink }}">
-      <span class="text-neutral-500 ">
-        {{/* {{ $diff := now.Sub .Lastmod }}
-        Posted {{ math.Round (div $diff.Hours 24) }} days ago */}}
-        {{.Date.Format "2006-01-02" }}
-      </span>
-      <span class="text-blue-600">
+  <div class="flex items-baseline">
+    <span class=" basis-3/4 text-blue-600">
+      <a href="{{.RelPermalink }}">
         {{ .LinkTitle }}
-      </span>
-    </a>
+      </a>
+    </span>
+    <span class="text-neutral-500 basis-1/4">
+      {{.Date.Format "2006/01/02" }}
+    </span>
+
   </div>
   {{ end }}
 </div>
