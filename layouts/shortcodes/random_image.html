@@ -1,1 +1,7 @@
-<img src="https://picsum.photos/900/300" alt="Loading" loading="lazy">
+<img id="random_image" alt="Loading" loading="lazy">
+{{ $total := 0}}
+{{ range (readDir "static/images/random") }}{{ $total = add $total 1 }}{{ end }}
+{{ $js := resources.Get "js/random_img.js" | js.Build (dict "params" (dict "total" $total)) }}
+{{ with $js }}
+    <script src="{{ .Permalink }}"></script>
+{{ end }}
