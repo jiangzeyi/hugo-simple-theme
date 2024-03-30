@@ -1,21 +1,5 @@
 {{ define "main" }}
-
-<div class="flex flex-col gap-y-2">
-  {{ range site.RegularPages }}
-  <div class="flex gap-x-2 items-baseline">
-    <a href="{{.RelPermalink }}">
-      <span class="text-neutral-500 ">
-        {{/*  {{ $diff := now.Sub .Lastmod }}
-        Posted {{ math.Round (div $diff.Hours 24) }} days ago  */}}
-        {{.Date.Format "2006-01-02" }}
-      </span>
-      <span class="text-neutral-900">
-        {{ .LinkTitle }}
-      </span>
-    </a>
-  </div>
-  {{ end }}
-
-</div>
-
+<article class="prose">
+  {{.Content}}
+</article>
 {{ end }}

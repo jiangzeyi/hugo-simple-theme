@@ -7,6 +7,10 @@ name = '首页'
 pageRef = '/'
 weight = 10
 
+[services]
+  [services.googleAnalytics]
+    id = 'G-XXXXXXXXX'
+
 [module]
   [module.hugoVersion]
     extended = false

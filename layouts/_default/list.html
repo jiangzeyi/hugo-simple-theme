@@ -1,19 +1,19 @@
 {{ define "main" }}
-<main class="w-4/5 py-6 mx-auto">
-  <div class="flex flex-col gap-y-4">
-    {{ range .Pages }}
-    <div class="flex gap-x-4 items-baseline">
-      <a href="{{ .RelPermalink  }}">
-        <span class="text-neutral-500 ">
-          1个月前
-        </span>
-        <span class="text-neutral-900">
-          {{ .LinkTitle }}
-        </span>
-      </a>
-    </div>
-    {{ end }}
+<div class="flex flex-col gap-y-2">
+  {{ $pages := where .Site.RegularPages "Section" "posts" }}
+  {{ range $pages }}
+  <div class="flex gap-x-2 items-baseline">
+    <a href="{{.RelPermalink }}">
+      <span class="text-neutral-500 ">
+        {{/* {{ $diff := now.Sub .Lastmod }}
+        Posted {{ math.Round (div $diff.Hours 24) }} days ago */}}
+        {{.Date.Format "2006-01-02" }}
+      </span>
+      <span class="text-neutral-900">
+        {{ .LinkTitle }}
+      </span>
+    </a>
   </div>
-</main>
-
+  {{ end }}
+</div>
 {{ end }}
