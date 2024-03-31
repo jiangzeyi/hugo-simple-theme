@@ -3,12 +3,12 @@
   {{ $pages := where .Site.RegularPages "Section" "posts" }}
   {{ range $pages }}
   <div class="flex items-baseline">
-    <span class=" basis-3/4 text-blue-600">
+    <span class=" basis-11/12 text-blue-600">
       <a href="{{.RelPermalink }}">
         {{ .LinkTitle }}
       </a>
     </span>
-    <span class="text-neutral-500 basis-1/4">
+    <span class="text-neutral-500 basis-1/12">
       {{.Date.Format "2006/01/02" }}
     </span>
 
