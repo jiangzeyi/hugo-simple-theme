@@ -1,2 +1,2 @@
 import "./photoswip.js"
-import "./random_img.js"
+import "./random_photo.js"

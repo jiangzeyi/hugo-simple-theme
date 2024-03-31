@@ -1,14 +1,20 @@
 {{/*  获取首页随机图片数量  */}}
-{{ $total := 0}}
-{{ range (readDir "static/images/random") }}{{ $total = add $total 1 }}{{ end }}
-{{$opts := dict "params" (dict "total" $total)}}
+{{ $opts := dict "minify" true }}
+{{ if .Site.Params.randomPhoto.enable }}
+    {{ $width := .Site.Params.randomPhoto.width }}
+    {{ $height := .Site.Params.randomPhoto.height }}
+    {{ $url := .Site.Params.randomPhoto.url }}
+    {{ $randomPhotoParams := dict "randomPhotoParams"
+      (dict "width" $width "height" $height "url" $url) }}
+    {{ $opts = merge $opts (dict "params" $randomPhotoParams)}}
+{{ end }}
+
 {{- with resources.Get "js/main.js" }}
   {{- if eq hugo.Environment "development" }}
     {{- with . | js.Build $opts }}
       <script src="{{ .RelPermalink }}"></script>
     {{- end }}
   {{- else }}
-    {{- $opts = merge $opts (dict "minify" true)  }}
     {{- with . | js.Build $opts | fingerprint }}
       <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
     {{- end }}

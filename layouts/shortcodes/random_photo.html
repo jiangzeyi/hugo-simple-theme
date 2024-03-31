@@ -1,0 +1,10 @@
+{{ if .Site.Params.randomPhoto.enable }}
+    {{ $width := .Site.Params.randomPhoto.width }}
+    {{ $height := .Site.Params.randomPhoto.height }}
+    <a id="random-photo-link" class="gallery" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}">
+        <img id="random-photo" width="{{ $width }}" height="{{ $height }}"/>
+    </a>
+    {{/*  <a id="random-photo-link" class="gallery" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}">
+        <div id="random-photo"  style="width: 600px; height: 300px"></div>
+    </a>  */}}
+{{ end }}
