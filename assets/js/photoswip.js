@@ -1,13 +1,9 @@
 // Include Lightbox 
 import PhotoSwipeLightbox from '../lib/photoswipe-lightbox.esm.min.js';
 
-
-
-const content = document.getElementById("content");
-
 const lightbox = new PhotoSwipeLightbox({
     // may select multiple "galleries"
-    gallery: "#content",
+    gallery: ".prose",
 
     // Elements within gallery (slides)
     children: ".gallery",
