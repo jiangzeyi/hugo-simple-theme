@@ -2,7 +2,7 @@ import * as params from '@params';
 import util from './util';
 
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     let total = params.total;
     let random = util.randomInt(total);
     let bufferImage = new Image();
@@ -13,4 +13,3 @@ window.addEventListener('DOMContentLoaded', function() {
         random_image.src = bufferImage.src;
     });
 });
-;
