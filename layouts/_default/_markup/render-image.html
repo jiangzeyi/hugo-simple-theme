@@ -32,7 +32,7 @@
 {{- $attributes := merge .Attributes (dict "alt" .Text "src" $src "title" .Title "width" $width "height" $height ) -}}
 {{/*  random_image_container.setAttribute('data-pswp-width', bufferImage.width)  */}}
 {{/*  random_image_container.setAttribute('data-pswp-height', bufferImage.height)  */}}
-<a class="gallery" href="{{ $src }}" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}">
+<a class="gallery" href="{{ $src }}" data-pswp-width="{{ $width }}" data-pswp-height="{{ $height }}" aria-label="{{ .Text }}">
     <img
   {{- range $k, $v := $attributes -}}
     {{- if $v -}}
