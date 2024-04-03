@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 @import "../lib/photoswipe.css";
 
-img[src=""], img:not([src]) {
+img[src=""],
+img:not([src]) {
     opacity: 0;
 }
