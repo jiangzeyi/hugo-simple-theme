@@ -1,20 +1,30 @@
 import * as params from '@params';
-import utils from './utils';
+import * as utils from './utils';
 
-document.addEventListener
-
-window.addEventListener('load', () => {
-    let randomPhoto = document.getElementById('random-photo');
-    let randomPhotoLink = document.getElementById('random-photo-link');
-    if (!randomPhoto || !randomPhotoLink) {
-        return;
+class RandomPhotoLoader {
+    constructor() {
+        if (params.randomPhotoParams) {
+            this.loadRandomPhoto();
+        }
     }
 
-    let photoParams = params.randomPhotoParams;
-    let { url, width, height } = photoParams;
-    let seed = utils.generateSeed(6);
-    let replacedUrl = utils.parse(url, seed, width, height);
+    loadRandomPhoto() {
+        window.addEventListener('load', () => {
+            let randomPhoto = document.getElementById('random-photo');
+            let randomPhotoLink = document.getElementById('random-photo-link');
+            if (!randomPhoto || !randomPhotoLink) {
+                return;
+            }
 
-    randomPhoto.src = replacedUrl;
-    randomPhotoLink.setAttribute('href', replacedUrl);
-});
+            let photoParams = params.randomPhotoParams;
+            let { url, width, height } = photoParams;
+            let seed = utils.seed(6);
+            let replacedUrl = utils.formatStr(url, seed, width, height);
+
+            randomPhoto.src = replacedUrl;
+            randomPhotoLink.setAttribute('href', replacedUrl);
+        });
+    }
+}
+
+export default RandomPhotoLoader;
