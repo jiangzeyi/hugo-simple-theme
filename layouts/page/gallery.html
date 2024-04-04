@@ -1,0 +1,10 @@
+{{ define "main" }}
+
+{{ $regex := `!\[(.*?)\]\((.*?)(?:\s*"(.*?)")?\)`}}
+{{ $images := findRESubmatch $regex .RawContent }}
+<div class="columns-2 gap-4  md:columns-3 [&>img:not(:first-child)]:mt-4">
+    {{ range $images }}
+        {{ partial "img.html" (dict "Destination" (index . 2) "RelPermalink" (index . 2) "Alt" (index . 1) "Title" (index . 3)) }}
+    {{ end }}
+</div>
+{{ end }}

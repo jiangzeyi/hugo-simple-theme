@@ -6,7 +6,7 @@ const docmentInit = () => {
     new RandomPhotoLoader();
     // 初始化photoswipe
     const lightbox = new PhotoSwipeLightbox({
-        gallery: ".prose",
+        gallery: "#content",
         children: ".gallery",
         pswpModule: () => import('../lib/photoswipe.esm.min.js'),
     });
