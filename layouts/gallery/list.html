@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-2 py-2">
+    {{ range .Pages }}
+    <a href="{{.RelPermalink }}" class="group">
+        <div class="flex flex-col relative justify-between shadow-md rounded-lg dark:bg-neutral-700">
+            {{ $image := "https://picsum.photos/600/400" }}
+            {{ with .Params.image }}
+                {{ $image = .}}
+            {{ end }}
+            <img class=" aspect-[16/9] relative rounded-lg object-fill " loading="lazy" src="{{ $image }}"
+                alt="{{ .LinkTitle }}" />
+            <span class="w-full h-1/5 absolute bottom-0 rounded-b-lg text-slate-50 bg-gray-900 bg-opacity-50 hidden group-hover:flex items-center justify-center">
+                {{ .LinkTitle }} </span>
+        </div>
+
+    </a>
+
+    {{ end }}
+</div>
+{{ end }}
