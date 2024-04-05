@@ -16,7 +16,7 @@
     {{- end }}
   {{- else }}
     {{- with . | js.Build $opts | fingerprint }}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      <script src="{{ .RelPermalink }}" crossorigin="anonymous"></script>
     {{- end }}
   {{- end }}
 {{- end }}
